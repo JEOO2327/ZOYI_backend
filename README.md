@@ -92,7 +92,7 @@ Channel.io Backend task
             - {"value": "NotKorean"} 
       - GET
         - get example
-          - Enter request URL : http://localhost:8000/keys/1/translations/en
+          - Enter request URL : http://localhost:8000/keys/1/translations/ko
           - Click Send Button
 
                
