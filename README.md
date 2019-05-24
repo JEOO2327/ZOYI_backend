@@ -13,7 +13,8 @@ Channel.io Backend task
 
 - Excute method
   - Create DB and Running server
-    - git clone
+    - git clone https://github.com/JEOO2327/ZOYI_backend.git
+    - cd ZOYI_backend
     - python manage.py makemigrations Translation
     - python manage.py migrate
     - python manage.py runserver
