@@ -126,4 +126,4 @@ Channel.io Backend task
  
  - Result of input examples are in the issues.
  
- - The Error message was explained in the issues.
+ - The Error messages are explained in the issues.
