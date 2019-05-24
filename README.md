@@ -129,8 +129,8 @@ Channel.io Backend task
   
 ----------------------------------------------------------------------------------------------------------    
  
- - To help understand how to test with POSTMAN, some screen shots are uploaded on the issue that contains a method of entering values and send request using postman. #2
+ - To help understand how to test with POSTMAN, some screen shots are uploaded on the issue that contains a method of entering values and send request using postman.
  
- - Result of input examples are in the issues. #1
+ - Result of input examples are in the issues.
  
- - The Error messages are explained in the issues. #3
+ - The Error messages are explained in the issues.
