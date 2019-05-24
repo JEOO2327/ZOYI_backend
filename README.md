@@ -49,9 +49,12 @@ Channel.io Backend task
             - { "name": "InvAlidKey" }
             - { "name": "invalid_key" }
             - {}
-   
+
       - GET
-        - Click Send Button
+        - get example
+          - Enter request URL : http://localhost:8000/keys
+          - Click Send Button
+
 
     - request URL : http://localhost:8000/keys/{keyId}
       - PUT        
@@ -87,12 +90,16 @@ Channel.io Backend task
             - request URL : http://localhost:8000/keys/1/translations/ko
             - {"value": "NotKorean"} 
       - GET
-        - Click Send Button
+        - get example
+          - Enter request URL : http://localhost:8000/keys/1/translations/3
+          - Click Send Button
 
                
     - request URL : http://localhost:8000/keys/{keyId}/translations
       - GET
-        - Click Send Button
+        - get example
+          - Enter request URL : http://localhost:8000/keys/1/translations
+          - Click Send Button
       
     - request URL : http://localhost:8000/language_detect
       - GET(with Parameter)
