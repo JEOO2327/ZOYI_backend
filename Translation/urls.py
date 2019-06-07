@@ -12,10 +12,10 @@ urlpatterns = [
     #GET Method : check translation
     #PUT Method : modify specific language translation
     #POST Method : add translation
-    path('keys/<int:keyId>/translations/<str:locale>', views.Translation_Get_Put_Post_View.as_view(), name = 'translate_post'),
+    path('keys/<int:key_id>/translations/<str:locale>', views.Translation_Get_Put_Post_View.as_view(), name = 'translate_post'),
 
     #GET Method : check all translation
-    path('keys/<int:keyId>/translations', views.Translations_Get_View.as_view(), name = 'translate_list'),
+    path('keys/<int:key_id>/translations', views.Translations_Get_View.as_view(), name = 'translate_list'),
 
     #GET Method : detect language
     path('language_detect', views.Language_Get_View.as_view()),

@@ -7,7 +7,7 @@ class Key(models.Model):
 
 class Translation(models.Model):
     id = models.AutoField(primary_key = True)
-    keyId = models.ForeignKey(Key, related_name = 'translations', on_delete = models.CASCADE)
+    key_id = models.ForeignKey(Key, related_name = 'translations', on_delete = models.CASCADE)
 
     locale = models.TextField(
             choices = (

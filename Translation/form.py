@@ -7,13 +7,15 @@ import detectlanguage
 detectlanguage.configuration.api_key = "ee97da1f2c23d8274796a0b99fd620c8"
 
 class KeyForm(forms.ModelForm):
-    message = 'Invalid data'
+    def __init__(self, *args, **kwargs):
+        super(KeyForm, self).__init__(*args, **kwargs)
+        self.message = 'Invalid data'
     def clean_name(self):
         name = self.cleaned_data['name']
 
         # check that Key Object with {name} exist
-        KeyObject = Key.objects.filter(name = name)
-        if KeyObject.exists():
+        key_object = Key.objects.filter(name = name)
+        if key_object.exists():
             self.message = 'Integrity constraint - [ "name" : ' + name + ' ] is already exist'
             raise forms.ValidationError(self.message)
 
@@ -30,11 +32,18 @@ class KeyForm(forms.ModelForm):
         fields = ('id', 'name')
 
 class TranslationForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(TranslationForm, self).__init__(*args, **kwargs)
+        self.message = 'Invalid data'
     def clean(self):
         cleaned_data = super(TranslationForm, self).clean()
+        try:
+            locale = self.cleaned_data['locale']
+            value = self.cleaned_data['value']
+        except:
+            self.message = 'Invalid input value'
+            raise forms.ValidationError(self.message)
 
-        locale = self.cleaned_data['locale']
-        value = self.cleaned_data['value']
         LocaleOfValue = detectlanguage.simple_detect(value)
 
         # check {value}'s language is equal to {locale}
@@ -45,4 +54,4 @@ class TranslationForm(forms.ModelForm):
 
     class Meta:
         model = Translation
-        fields = ('id', 'keyId', 'locale', 'value')
+        fields = ('id', 'key_id', 'locale', 'value')
